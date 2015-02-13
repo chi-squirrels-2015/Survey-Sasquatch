@@ -1,0 +1,59 @@
+/**************LAYOUT**************/
+header {
+  margin: 0 0 5% 0;
+  padding: .75%;
+  display: inline-block;
+  width: 100%;
+}
+
+header a{
+  text-decoration: none;
+}
+
+nav {
+
+}
+
+nav a {
+
+}
+
+
+/**************INDEX**************/
+
+
+.container {
+  display: inline-block;
+  width: 50%;
+  margin: 0 25%;
+}
+
+.index_forms {
+  display: inline-block;
+  width: 49%;
+}
+
+.index_forms input{
+  margin: 1%;
+  display: inline-block;
+  width: 75%;
+  text-align: center;
+}
+
+.index_forms button{
+
+}
+
+/**************COLORS**************/
+
+header {
+  background: #78be20; /*pantone 368*/
+}
+
+header a{
+  color: #fff;
+}
+
+nav a:hover{
+  color: #ffc658;
+}
