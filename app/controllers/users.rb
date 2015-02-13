@@ -21,6 +21,6 @@ post '/users' do
 end
 
 # Show user profile
-get '/users/profile' do
+get '/profile' do
   erb :'users/profile'
 end
