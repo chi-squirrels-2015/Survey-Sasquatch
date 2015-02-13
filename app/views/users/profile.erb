@@ -1,5 +1,7 @@
-<ul>
-  <%@user.surveys.each do |survey|%>
-    <li><%= survey.name%></li>
-  <%end%>
-</ul>
+<% if @user%>
+  <ul>
+    <%@user.surveys.each do |survey|%>
+      <li><%= survey.name%></li>
+    <%end%>
+  </ul>
+<%end%>

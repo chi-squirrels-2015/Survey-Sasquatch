@@ -4,12 +4,7 @@ get "/" do
 end
 
 get "/login" do
-  erb :login
-end
-
-get "/logout" do
-  session.delete[:id]
-  redirect "/"
+  erb :'users/profile'
 end
 
 post "/login" do
@@ -20,6 +15,11 @@ post "/login" do
     redirect 'users/profile'
   else
     @error = "Bad Monkey!"
-    redirect '/login'
+    redirect '/'
   end
+end
+
+get "/logout" do
+  session.delete(:id)
+  redirect "/"
 end

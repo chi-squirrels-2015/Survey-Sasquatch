@@ -6,16 +6,17 @@ end
 
 # Submit form for new user
 
-post '/users' do
+post '/users/new' do
+  p params
   user = User.new
   user.email = params[:email]
   user.password = params[:password]
 
   if user.save
     session[:id] = user.id
-    redirect '/users/profile'
+    redirect '/profile'
   else
-    redirect '/users/new' do
+    redirect '/'
   end
 
 end
