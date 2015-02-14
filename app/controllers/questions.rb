@@ -1,7 +1,16 @@
 post '/questions' do
- p params
+
  questions = params[:questions]
- choices = params[]
+ choices = params[:choices]
+
+ questions.each_with_index do |question_content, index|
+    question =  Question.create(content: question_content)
+    choices[index.to_s].each do |choice_content|
+      Choice.create(content: choice_content, question: question)
+    end
+
+ end
+ redirect '/profile'
 end
 
 get '/questions/new' do
