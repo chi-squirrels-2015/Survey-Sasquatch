@@ -15,16 +15,24 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Survey Sasquatch</title>
 </head>
 <header>
+  <a href='/'><img id="sasquatch-logo" src="/imgs/white-sasquatch-logo.png"></a>
   <h1><a href='/'> Survey Sasquatch</a></h1>
   <nav>
-  <a href="/logout">Logout</a>
+  <%if current_user%>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+  <%end%>
 </nav>
 </header>
 
 <body>
   <%= yield %>
 </body>
+
+<footer>
+  <p>Welcome to the footer</p>
+</footer>
 </html>

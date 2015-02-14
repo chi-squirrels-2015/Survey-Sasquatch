@@ -1,1 +1,17 @@
+<%if @survey.questions%>
+  <%@survey.questions.each do |question|%>
+    <%question.choices.each do |choice|%>
+    <%end%>
+  <%end%>
+<%end%>
 
+<div id="question_block">
+  <button class="add_questions">Add New Question</button>
+  <form action='/questions' method="post">
+    <input type='text' placeholder='enter question here' name="question[]">
+    <input type='text' placeholder='enter choice here' name="choice[]">
+    <button class="choices">Add New Choice</button>
+    <button class="remove_questions">Remove Question</button>
+    <input type='submit'>
+  </form>
+</div>
