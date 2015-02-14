@@ -36,8 +36,8 @@ end
 
 post '/surveys' do
   @survey = Survey.new(title: params[:title], creator: User.find(session[:id]))
-
   if @survey.save
+    session[:creating_survey] = @survey.id
     @survey
     erb :"surveys/new"
   end

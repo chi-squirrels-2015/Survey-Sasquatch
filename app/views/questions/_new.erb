@@ -1,7 +1,6 @@
-<form action='/questions' method="post">
-  <input type='text' placeholder='enter question here' name="question[]">
-  <input type='text' placeholder='enter choice here' name="choice[]">
-  <button class="choices">Add New Choice</button>
+<div data-question-id=<%=@question_id%> class="question">
+  <input type='text' placeholder='enter question here' name="questions[]">
+  <button class="add_choices">Add New Choice</button>
+  <button class="remove_choices">Remove Choice</button>
   <button class="remove_questions">Remove Question</button>
-  <input type='submit'>
-</form>
+</div>
