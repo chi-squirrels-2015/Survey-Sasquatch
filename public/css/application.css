@@ -5,6 +5,9 @@ header {
   display: inline-block;
   width: 100%;
 }
+header h1{
+  font-size: 2em;
+}
 
 header img{
   max-width: 7%;
@@ -17,13 +20,15 @@ header a{
 }
 
 nav {
-  display: inline-block;
+  display: inline;
   float: right;
-  margin-right: 3%;
+  margin-top: 2%;
+  width: 10%;
 }
 
 nav a {
   float: left;
+  margin: 0 3%;
 }
 
 
@@ -66,7 +71,7 @@ footer p{
 /**************COLORS**************/
 
 header, footer {
-  background: #78be20; /*pantone 368*/
+  background: #78be20; /* pantone 368 C*/
 }
 
 header a, footer{
@@ -74,5 +79,9 @@ header a, footer{
 }
 
 nav a:hover{
-  color: #ffc658;
+  color: #ffc658; /* pantone 141 C */
 }
+
+
+/**************RESPONSIVE**************/
+

@@ -1,7 +1,10 @@
-<% if @user%>
-  <ul>
-    <%@user.surveys.each do |survey|%>
-      <li><%= survey.name%></li>
-    <%end%>
-  </ul>
+<% if current_user %>
+  <%if current_user.created_surveys%>
+    <ul>
+      <%current_user.created_surveys.each do |survey|%>
+        <li><%= survey.title%></li>
+      <%end%>
+    </ul>
+  <%end%>
 <%end%>
+<a href="/surveys/new">Create New Survey</a>

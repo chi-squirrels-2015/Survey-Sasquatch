@@ -3,6 +3,10 @@
 
 # Show all of a user's created surveys
 
+get '/surveys/new' do
+  erb :'surveys/new'
+end
+
 get '/profile/surveys' do
   @surveys = Survey.find_by(name: params[:name])
 end
