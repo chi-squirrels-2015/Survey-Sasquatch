@@ -30,11 +30,9 @@ get '/surveys/:id' do
   if session[:id] == @survey.creator_id
     erb :'surveys/show'
   else
-    redirect '/'
+    erb :'surveys/take'
   end
 end
-
-
 
 post '/surveys' do
   @survey = Survey.new(title: params[:title], creator: User.find(session[:id]))
@@ -58,7 +56,14 @@ end
 
 get '/surveys' do
   @surveys = Survey.all
-  erb :surveys
+  erb :'surveys/show'
 end
+
+get '/finish' do
+  erb :'surveys/finish'
+end
+
+
+
 
 

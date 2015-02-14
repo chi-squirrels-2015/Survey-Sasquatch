@@ -1,0 +1,20 @@
+<h2><%=@survey.title%></h2>
+
+<%if @survey.questions%>
+  <%@survey.questions.each do |question|%>
+    <p><%=question.content%></p>
+    <form>
+
+    <%question.choices.each do |choice|%>
+      <input type="radio" name="choices" > <%=choice.content%>
+    </br>
+    <%end%>
+  </form>
+  <%end%>
+<%end%>
+
+</br>
+
+<form action = "/finish">
+  <input type="submit" value="Submit Anwers">
+</form>
