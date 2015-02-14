@@ -6,16 +6,24 @@ header {
   width: 100%;
 }
 
+header img{
+  max-width: 7%;
+  display: inline-block;
+  float: left;
+}
+
 header a{
   text-decoration: none;
 }
 
 nav {
-
+  display: inline-block;
+  float: right;
+  margin-right: 3%;
 }
 
 nav a {
-
+  float: left;
 }
 
 
@@ -43,14 +51,25 @@ nav a {
 .index_forms button{
 
 }
+/**************FOOTER**************/
+footer {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+}
 
+footer p{
+  position: relative;
+  display: inline;
+  left: 40%;
+}
 /**************COLORS**************/
 
-header {
+header, footer {
   background: #78be20; /*pantone 368*/
 }
 
-header a{
+header a, footer{
   color: #fff;
 }
 

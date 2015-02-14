@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_many :created_surveys, class_name: "Survey", foreign_key: :creator_id
   has_many :responses
 
-  validates :password_hash, :length => {:minimum => 6}
-  validates :email, :uniqueness => true, :format => /.+@.+\..+/
+  # validates :password_hash, :length => {:minimum => 6}
+  # validates :email, :uniqueness => true, :format => /.+@.+\..+/
 
   def password
     @password ||= BCrypt::Password.new(password_hash)
