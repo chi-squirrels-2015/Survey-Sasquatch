@@ -4,7 +4,7 @@ post '/questions' do
  choices = params[:choices]
 
  questions.each_with_index do |question_content, index|
-    question =  Question.create(content: question_content)
+    question =  Question.create(content: question_content, survey_id: session[:creating_survey])
     choices[index.to_s].each do |choice_content|
       Choice.create(content: choice_content, question: question)
     end
