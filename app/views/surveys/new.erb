@@ -1,9 +1,10 @@
-<form action='/questions' method="post">
-  <input type='text' placeholder='enter question here' name="question[]">
-  <input type='text' placeholder='enter choice here' name="choice[]">
 
-  <button>Add New Question</button>
-  <button>Add New Choice</button>
-
-  <input type='submit'>
-</form>
+<div id="question_block">
+  <button class="questions">Add New Question</button>
+  <form action='/questions' method="post">
+    <input type='text' placeholder='enter question here' name="question[]">
+    <input type='text' placeholder='enter choice here' name="choice[]">
+    <button class="choices">Add New Choice</button>
+    <input type='submit'>
+  </form>
+</div>
