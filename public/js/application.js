@@ -4,20 +4,48 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  $("#question_block").on("click", ".add_questions", function(event){
+  $("#questions_block").on("click", ".add_questions", function(event){
     event.preventDefault();
-    $("#question_block")
+
+    var questionId = $("#question_form").find(".question").length
 
     var request = $.ajax({
       url: "/questions/new",
-      type: "get"
+      type: "get",
+      data: { num: questionId}
     })
 
     request.done(function(response){
-      $("#question_block").append(response);
+      $("#question_form").append(response);
     });
   });
 
+  $("#questions_block").on("click", ".add_choices", function(event){
+    event.preventDefault();
+    var choicesButton = $(this);
+    var questionId = choicesButton.closest(".question").attr("data-question-id")
 
+    var request = $.ajax({
+      url: "/questions/choices/new",
+      type: "get",
+      data: {num: questionId}
+    });
 
+    request.done(function(response){
+      choicesButton.before(response);
+    });
+  });
+
+  $("#questions_block").on("click", ".remove_questions", function(event){
+    event.preventDefault();
+    var questionToRemove = $(this).closest(".question");
+
+    questionToRemove.remove();
+
+  });
+
+  $("#questions_block").on("click", ".remove_choices", function(event){
+    event.preventDefault();
+      $(this).siblings(".choice").last().remove();
+  });
 });
