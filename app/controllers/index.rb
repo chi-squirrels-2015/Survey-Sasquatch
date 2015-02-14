@@ -10,11 +10,13 @@ end
 post "/login" do
   user = User.find_by(email: params[:email])
 
-  if user && user.password == params[:password]
+  if user && user.password == params[:password_hash]
     session[:id] = user.id
-    redirect 'users/profile'
+    puts "hello"
+    redirect '/profile'
   else
     @error = "Bad Monkey!"
+    puts "Bad Monnkey"
     redirect '/'
   end
 end
