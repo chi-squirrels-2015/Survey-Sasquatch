@@ -4,7 +4,7 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  $("#question_block").on("click", ".questions", function(event){
+  $("#question_block").on("click", ".add_questions", function(event){
     event.preventDefault();
     $("#question_block")
 
@@ -17,5 +17,7 @@ $(document).ready(function() {
       $("#question_block").append(response);
     });
   });
+
+
 
 });

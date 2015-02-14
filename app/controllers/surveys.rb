@@ -3,7 +3,10 @@
 
 # Show all of a user's created surveys
 
+
+
 get '/surveys/new' do
+
   erb :'surveys/new'
 end
 
@@ -33,9 +36,12 @@ get '/surveys/:id' do
 end
 
 post '/surveys' do
-  params.each do |k,v|
-    question = Question.find(k)
-    Response.create(question: question, answer: v)
+  @survey = Survey.new(title: params[:title], creator: User.find(session[:id]))
+  puts "hiya!"
+  p params
+  if @survey.save
+    @survey
+    erb :"surveys/new"
   end
 end
 
