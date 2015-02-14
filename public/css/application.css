@@ -31,6 +31,12 @@ nav a {
   margin: 0 3%;
 }
 
+#sasquatch_thanks {
+  display: inline-block;
+  text-align: center;
+  margin: 0 25%;
+  width: 40%;
+}
 
 /**************INDEX**************/
 

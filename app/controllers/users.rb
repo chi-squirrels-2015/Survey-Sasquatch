@@ -23,5 +23,6 @@ end
 
 # Show user profile
 get '/profile' do
+  @surveys = Survey.all
   erb :'users/profile'
 end
