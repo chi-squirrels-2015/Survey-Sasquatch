@@ -20,7 +20,17 @@
 <header>
   <h1><a href='/'> Survey Sasquatch</a></h1>
   <nav>
-  <a href="/logout">Logout</a>
+    <%if logged_in?%>
+      <a href ="/users/profile">Profile</a>
+      <a href ="/logout">Logout</a>
+    <%else%>
+      <div class="login">
+      <a href ="/">Login</a>
+    </div>
+    <div class="signup">
+      <a href ="/">Sign Up!</a>
+      </div
+    <%end%>
 </nav>
 </header>
 

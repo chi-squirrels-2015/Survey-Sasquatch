@@ -15,7 +15,7 @@ nav {
 }
 
 nav a {
-
+  padding-right: 15px;
 }
 
 
@@ -28,32 +28,48 @@ nav a {
   margin: 0 25%;
 }
 
-.index_forms {
+/*.index_forms {
   display: inline-block;
   width: 49%;
-}
+  }*/
 
-.index_forms input{
-  margin: 1%;
-  display: inline-block;
-  width: 75%;
-  text-align: center;
-}
+  .index_forms input{
+    margin: 1%;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+  }
 
-.index_forms button{
+  .index_forms button{
 
-}
+  }
 
-/**************COLORS**************/
+  .login {
+    display: inline-block;
+  }
 
-header {
-  background: #78be20; /*pantone 368*/
-}
+  .signup {
+    display: inline-block;
+  }
 
-header a{
-  color: #fff;
-}
+  #login_form {
+    visibility: visible;
+  }
 
-nav a:hover{
-  color: #ffc658;
-}
+  #signup_form {
+    visibility: hidden;
+  }
+
+  /**************COLORS**************/
+
+  header {
+    background: #78be20; /*pantone 368*/
+  }
+
+  header a{
+    color: #fff;
+  }
+
+  nav a:hover{
+    color: #ffc658;
+  }
