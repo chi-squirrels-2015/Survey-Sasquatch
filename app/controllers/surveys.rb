@@ -14,6 +14,37 @@ get '/profile/surveys' do
   @surveys = Survey.find_by(name: params[:name])
 end
 
+get '/surveys/:id/edit' do
+  @survey = Survey.find(params[:id])
+
+  if session[:id] == @survey.creator_id
+    erb :'surveys/template'
+  else
+    redirect '/'
+  end
+end
+
+get '/surveys/:id' do
+  @survey = Survey.find(params[:id])
+
+  if session[:id] == @survey.creator_id
+    erb :'surveys/show'
+  else
+    redirect '/'
+  end
+end
+
+
+
+post '/surveys' do
+  @survey = Survey.new(title: params[:title], creator: User.find(session[:id]))
+
+  if @survey.save
+    @survey
+    erb :"surveys/new"
+  end
+end
+
 # Show an individual user's survey
 
 get '/profile/surveys/:id' do
@@ -30,18 +61,4 @@ get '/surveys' do
   erb :surveys
 end
 
-get '/surveys/:id' do
-  @survey = Survey.find(params[:id])
-  erb :'surveys/show'
-end
-
-post '/surveys' do
-  @survey = Survey.new(title: params[:title], creator: User.find(session[:id]))
-  puts "hiya!"
-  p params
-  if @survey.save
-    @survey
-    erb :"surveys/new"
-  end
-end
 

@@ -1,1 +1,9 @@
+<%=@survey.title%>
+<a href="/surveys/<%=@survey.id%>/edit">Edit Survey</a>
 
+<%if @survey.questions%>
+  <%@survey.questions.each do |question|%>
+    <%question.choices.each do |choice|%>
+    <%end%>
+  <%end%>
+<%end%>
